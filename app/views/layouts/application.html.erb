@@ -11,7 +11,13 @@
 		<div id="wrap">
 			<!-- render header -->
 		  <%= render 'layouts/header' %>
+		  	<% flash.each do |name, msg| %>
+     			<div class="container" style="padding-top: 20px">
+     				<%= content_tag(:div, msg, class: "alert alert-info") %>
+     			</div>
+				<% end %>
 				<%= yield %>
+
 		</div>
 	<%= render 'layouts/footer' %>
 </body>

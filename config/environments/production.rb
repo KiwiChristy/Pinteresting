@@ -77,4 +77,8 @@ Pinteresting::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Required for Devise
+  # Need to update host. Have added Heroku URL so need to check this works
+  config.action_mailer.default_url_options = { :host => 'http://packedful-pinteresting.herokuapp.com/' }
 end
