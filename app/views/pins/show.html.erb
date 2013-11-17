@@ -1,10 +1,9 @@
 <div class="container" style="padding-top: 20px">
-	<p id="notice"><%= notice %></p>
+			<%= image_tag @pin.image.url(:medium) %>
 
-	<p>
-	  <strong>Description:</strong>
+	<h4>
 	  <%= @pin.description %>
-	</p>
+	</h4>
 	<% if @pin.user == current_user %>
 		<%= link_to 'Edit', edit_pin_path(@pin) %> 
 	<% end %>
