@@ -1,20 +1,40 @@
+
+  <% if user_signed_in? %>
+    <div class="container" style="padding-top: 20px">
+      <div class="well">
+        <div class="lead">Click here to add a <%= link_to 'New Pin', new_pin_path, class: "btn btn-primary" %></div> 
+      </div>
+    </div>
+  <% else %>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Welcome to Chris's One Month Rails</h1>
+          <p> 
+            <%= link_to "Log-in", new_user_session_path, class: "btn btn-default btn-lg" %> 
+            <%= link_to "Sign-up!", new_user_registration_path, class: "btn btn-primary btn-lg" %> 
+          </p>
+      </div>
+    </div>
+  <% end %>
 <div class="container" style="padding-top: 20px">
-  <div class="jumbotron">
-    <% if user_signed_in? %>
-    Click here to add a <%= link_to 'New Pin', new_pin_path, class: "btn btn-default btn-lg" %>
-    <% end %>
-  </div>
   <div id="pins" class="transitions-enabled">
     <% @pins.each do |pin| %>
       <div class="box panel panel-default">
-        <%= image_tag pin.image.url(:medium) %>
+        <%= link_to image_tag(pin.image.url(:medium)), pin %>
         <div class="panel-body">
-          <%= pin.description %>
-          <%= pin.user.email %>
-          <%= link_to 'Show', pin %>
+          <p><strong><%= pin.description %></strong></p>
+          <p><%= pin.user.email %></p>
           <% if pin.user == current_user %>
-            <%= link_to 'Edit', edit_pin_path(pin) %>
-            <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <div class="actions">
+              <%= link_to edit_pin_path(pin) do %>
+                <span class="glyphicon glyphicon-edit"></span>
+                Edit
+              <% end %>
+              <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <span class="glyphicon glyphicon-trash"></span>
+                Delete
+              <% end %>
+            </div>
           <% end %>
         </div>
       </div>
