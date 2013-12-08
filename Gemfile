@@ -16,6 +16,8 @@ gem 'paperclip', '~> 3.0'
 gem 'aws-sdk', '~> 1.16.1'
 gem 'nokogiri', '~> 1.5.10'
 gem 'masonry-rails', '~> 0.2.0'
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
 
 
 # groups for databases running on development, test and live (production)
