@@ -18,6 +18,7 @@ gem 'nokogiri', '~> 1.5.10'
 gem 'masonry-rails', '~> 0.2.0'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
+gem "bxslider-rails", "~> 4.1.0"
 
 
 # groups for databases running on development, test and live (production)

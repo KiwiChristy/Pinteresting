@@ -3,7 +3,12 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+ $('#pins').ready ->
+  $(".bxslider").bxSlider()
+	
   $('#pins').imagesLoaded ->
     $('#pins').masonry
       itemSelector: '.box'
       isFitWidth: true
+
+
