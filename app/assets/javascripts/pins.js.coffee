@@ -4,7 +4,12 @@
 
 $ ->
  $('#pins').ready ->
-  $(".bxslider").bxSlider()
+  $(".bxslider").bxSlider({
+    nextImage: 'url of image goes here',
+    prevImage: 'url of image goes here',
+    prevText: '',   
+    nextText: '',
+  });
 	
   $('#pins').imagesLoaded ->
     $('#pins').masonry
