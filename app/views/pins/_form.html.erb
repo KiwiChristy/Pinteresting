@@ -11,9 +11,10 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :image %>
-    <%= f.file_field :image, class: "form-control" %>
+  <div class="MultipleImages">
+      <%= f.fields_for :assets do |assets| %>
+        <%= assets.file_field :image %>
+      <% end %>
   </div>
 
   <div class="form-group">
